@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <!-- <v-main>
+        <v-container>Hello world</v-container>
+      </v-main> -->
+      <template>
+        <v-card
+          class="mx-auto"
+          width="100%"
+        >
+          <v-toolbar
+            color="teal"
+            dark
+          >
+            <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
+            <!-- <v-btn icon>
+            </v-btn> -->
+            <v-icon>mdi-clipboard-text-outline</v-icon>
+              <v-autocomplete
+              v-model="select"
+              :loading="loading"
+              :items="items"
+              :search-input.sync="search"
+              cache-items
+              class="mx-4"
+              flat
+              hide-no-data
+              hide-details
+              label="选择数据表"
+              solo-inverted
+            ></v-autocomplete>
+
+            <!-- <v-toolbar-title>贷款分户动态信息</v-toolbar-title> -->
+      
+            <!-- <v-spacer></v-spacer> -->
+<!--       
+            <v-btn icon>
+              <v-icon>mdi-dots-vertical</v-icon>
+            </v-btn> -->
+          </v-toolbar>
+      
+          <v-list>
+            <v-list-group
+              v-for="item in items"
+              :key="item.title"
+              v-model="item.active"
+              :prepend-icon="item.action"
+              no-action
+            >
+              <template v-slot:activator>
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                  <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+                </v-list-item-content>
+              </template>
+              <v-card
+              :loading="loading"
+              :elevation=0
+              class="mx-auto">
+              <v-card-title class="text-body-1">dfs</v-card-title>
+              <v-card-text v-text="item.detail">fdsfsdj\njkldkfsdjklf</v-card-text>
+        
+            </v-card>
+              
+              <!-- <v-list-item
+                v-for="child in item.items"
+                :key="child.title"
+              >
+                <v-list-item-content>
+                  <v-list-item-title v-text="child.title"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item> -->
+            </v-list-group>
+          </v-list>
+        </v-card>
+      </template>
+
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script  type="module" >import db from './json/db.json';</script>
+  <script>
+
+
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data: () => ({
+    items: [
+      {
+        // action: 'mdi-ticket',
+        items: [{ title: 'List Item' }],
+        title: '贷款账号',
+        subtitle: 'AcctNo',
+        datatype: 'CHAR',
+        detail: 'sdfsdfsdfd\ndsfdsfjk'
+      },
+      {
+        // action: 'mdi-silverware-fork-knife',
+        // active: true,
+        items: [
+          { title: 'Breakfast & brunch' },
+          { title: 'New American' },
+          { title: 'Sushi' },
+        ],
+        title: 'Dining',
+      },
+      {
+        // action: 'mdi-school',
+        items: [{ title: 'List Item' }],
+        title: 'Education',
+      },
+      {
+        // action: 'mdi-run',
+        items: [{ title: 'List Item' }],
+        title: 'Family',
+      },
+      {
+        // action: 'mdi-bottle-tonic-plus',
+        items: [{ title: 'List Item' }],
+        title: 'Health',
+      },
+      {
+        // action: 'mdi-content-cut',
+        items: [{ title: 'List Item' }],
+        title: 'Office',
+      },
+      {
+        // action: 'mdi-tag',
+        items: [{ title: 'List Item' }],
+        title: 'Promotions',
+      },
+    ],
+  }),
+})
+
+    // new Vue({
+    //   el: '#app',
+    //   vuetify: new Vuetify(),
+    // })
+  </script>
+</body>
+</html>
+
+<script>
+
+  </script>
