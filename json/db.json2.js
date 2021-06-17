@@ -1,4 +1,4 @@
-{items: [
+export default{items: [
   {
     // action: 'mdi-ticket',
     items: [{ title: 'List Item' }],
