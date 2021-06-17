@@ -89,60 +89,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script type='module'>import { default as db } from './json/db.json2.js';</script>
+  <script src="json/db.json.js"></script>
   <script>
 
 console.log(db)
+const queryString = window.location.search;
+console.log(queryString);
+
 new Vue({
   el: '#app',
   vuetify: new Vuetify(),
-  data: () => ({
-    items: [
-      {
-        // action: 'mdi-ticket',
-        items: [{ title: 'List Item' }],
-        title: '贷款账号',
-        subtitle: 'AcctNo',
-        datatype: 'CHAR',
-        detail: 'sdfsdfsdfd\ndsfdsfjk'
-      },
-      {
-        // action: 'mdi-silverware-fork-knife',
-        // active: true,
-        items: [
-          { title: 'Breakfast & brunch' },
-          { title: 'New American' },
-          { title: 'Sushi' },
-        ],
-        title: 'Dining',
-      },
-      {
-        // action: 'mdi-school',
-        items: [{ title: 'List Item' }],
-        title: 'Education',
-      },
-      {
-        // action: 'mdi-run',
-        items: [{ title: 'List Item' }],
-        title: 'Family',
-      },
-      {
-        // action: 'mdi-bottle-tonic-plus',
-        items: [{ title: 'List Item' }],
-        title: 'Health',
-      },
-      {
-        // action: 'mdi-content-cut',
-        items: [{ title: 'List Item' }],
-        title: 'Office',
-      },
-      {
-        // action: 'mdi-tag',
-        items: [{ title: 'List Item' }],
-        title: 'Promotions',
-      },
-    ],
-  }),
+  data: () => {return db},
 })
 
     // new Vue({
