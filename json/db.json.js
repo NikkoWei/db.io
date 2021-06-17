@@ -1,4 +1,4 @@
-{
+export default{
     "items": [
       {
         "items": [{ "title": "List Item" }],
